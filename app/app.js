@@ -8,12 +8,13 @@ let styles
 
 const App = (props) => {
   console.log('props: ', props);
-  
+
   const {
     container,
     text,
     button,
-    buttonText
+    buttonText,
+    mainContent,
   } = styles
 
   return (
@@ -22,9 +23,25 @@ const App = (props) => {
       <TouchableHighlight style={button}>
         <Text style={buttonText}>Load Data</Text>
       </TouchableHighlight>
+      <View style={mainContent}>
+        {
+          props.appData.isFetching && <Text>Loading</Text>
+        }
+        {
+          props.appData.data.length ? (
+            props.appData.data.map((person, i) => {
+              return <View key={i}>
+                <Text>Name: {person.name}</Text>
+                <Text>Age: {person.age}</Text>
+              </View>
+            })
+          ) : null
+        }
+      </View>
     </View>
   )
 }
+
 
 styles = StyleSheet.create({
   container: {
@@ -42,6 +59,9 @@ styles = StyleSheet.create({
   },
   buttonText: {
     color: 'white'
+  },
+  mainContent: {
+    margin: 10,
   }
 })
 

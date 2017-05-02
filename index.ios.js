@@ -15,4 +15,4 @@ const Rixi = () => (
   </Provider>
 )
 
-AppRegistry.registerComponent('redux4ways', () => Rixi)
+AppRegistry.registerComponent('receiptLogger', () => Rixi)

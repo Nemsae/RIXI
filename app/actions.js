@@ -1,4 +1,5 @@
 import { FETCHING_DATA, FETCHING_DATA_SUCCESS, FETCHING_DATA_FAILURE } from './constants'
+import getPeople from './config/api.js'
 
 export function getData() {
   return {
@@ -20,5 +21,12 @@ export function getDataFailure() {
 }
 
 export function fetchData() {
-
+  return (dispatch) => {
+    dispatch(getData())
+    getPeople()
+      .then((data) => {
+        dispatch(getDataSuccess(data))
+      })
+      .catch((err) => console.log('err: ', err))
+  }
 }
