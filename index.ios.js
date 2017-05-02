@@ -17,7 +17,7 @@ export default class receiptLogger extends Component {
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>
-          React
+          John's Receipt Logger
         </Text>
         <Text style={styles.instructions}>
           To get started, edit index.ios.js

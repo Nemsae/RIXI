@@ -17,7 +17,7 @@ export default class receiptLogger extends Component {
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>
-          Welcome to React Native!
+          RIZI: John's Receipt Logger
         </Text>
         <Text style={styles.instructions}>
           To get started, edit index.android.js
@@ -36,7 +36,9 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+    // backgroundColor: '#FFEFEE',
+    // backgroundColor: '#FFF6EE',
+    backgroundColor: '#BDCACA',
   },
   welcome: {
     fontSize: 20,
@@ -45,7 +47,7 @@ const styles = StyleSheet.create({
   },
   instructions: {
     textAlign: 'center',
-    color: '#333333',
+    color: '#EFF5E5',
     marginBottom: 5,
   },
 });
