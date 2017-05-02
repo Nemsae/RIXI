@@ -7,7 +7,7 @@ const initialState = {
   error: false
 }
 
-export default dataReducer (state = initialState, action) => {
+export default function dataReducer (state = initialState, action) {
   switch (action.type) {
     case FETCHING_DATA: {
       return {
@@ -34,5 +34,4 @@ export default dataReducer (state = initialState, action) => {
       return state
     }
   }
-
 }
