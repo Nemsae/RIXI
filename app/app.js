@@ -20,7 +20,7 @@ const App = (props) => {
   return (
     <View style={container}>
       <Text style={text}>Rixi Template</Text>
-      <TouchableHighlight style={button}>
+      <TouchableHighlight style={button} onPress={() => props.fetchData()}>
         <Text style={buttonText}>Load Data</Text>
       </TouchableHighlight>
       <View style={mainContent}>
