@@ -7,8 +7,8 @@ import { fetchData } from './actions'
 let styles
 
 const App = (props) => {
-  console.log('props: ', props);
-
+  // console.log('props: ', props);
+  // move styles into styles folder
   const {
     container,
     text,
@@ -17,7 +17,7 @@ const App = (props) => {
     mainContent,
   } = styles
 
-  return (
+  return (a
     <View style={container}>
       <Text style={text}>Rixi Template</Text>
       <TouchableHighlight style={button} onPress={() => props.fetchData()}>
