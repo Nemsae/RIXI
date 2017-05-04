@@ -2,7 +2,7 @@ import React from 'react'
 import { View } from 'react-native'
 
 import { connect } from 'react-redux'
-import SplashPage from './components/splashPage'
+import SplashPage from './components/SplashPage'
 
 let styles
 
