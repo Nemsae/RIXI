@@ -2,7 +2,8 @@ import React from 'react'
 import { TouchableHighlight, View, Text, StyleSheet } from 'react-native'
 
 import { connect } from 'react-redux'
-import { fetchData } from './actions/thunkActions'
+// import { fetchData } from './actions/thunkActions'
+import { fetchData } from './actions/sagaActions'
 
 let styles
 
@@ -62,6 +63,7 @@ styles = StyleSheet.create({
   },
   mainContent: {
     margin: 10,
+    alignItems: 'center',
   }
 })
 
