@@ -2,7 +2,7 @@ import React from 'react'
 import { TouchableHighlight, View, Text, StyleSheet } from 'react-native'
 
 import { connect } from 'react-redux'
-import { fetchData } from './actions'
+import { fetchData } from './actions/thunkActions'
 
 let styles
 
@@ -17,7 +17,7 @@ const App = (props) => {
     mainContent,
   } = styles
 
-  return (a
+  return (
     <View style={container}>
       <Text style={text}>Rixi Template</Text>
       <TouchableHighlight style={button} onPress={() => props.fetchData()}>

@@ -1,5 +1,5 @@
-import { FETCHING_DATA, FETCHING_DATA_SUCCESS, FETCHING_DATA_FAILURE } from './constants'
-import getPeople from './config/api.js'
+import { FETCHING_DATA, FETCHING_DATA_SUCCESS, FETCHING_DATA_FAILURE } from '../constants'
+import getPeople from '../config/api.js'
 
 export function getData() {
   return {
