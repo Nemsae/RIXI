@@ -1,71 +1,60 @@
 import React from 'react'
-import { TouchableHighlight, View, Text, StyleSheet } from 'react-native'
+import { TouchableHighlight, Text, StyleSheet, Image } from 'react-native'
 
 import { connect } from 'react-redux'
-import { fetchData } from './actions/dataActions'
-// import { fetchData } from './actions/sagaActions'
+import { fetchData } from '../actions/dataActions'
+
+import splashBackgroundImage from '../images/rixi-introduction-background.jpg'
 
 let styles
 
-const App = (props) => {
-  // console.log('props: ', props);
-  // move styles into styles folder
+const SplashPage = (props) => {
   const {
     container,
-    text,
+    welcomeText,
     button,
     buttonText,
-    mainContent,
   } = styles
 
   return (
-    <View style={container}>
-      <Text style={text}>Rixi Splash</Text>
+    <Image source={splashBackgroundImage} style={container}>
+      <Text style={welcomeText}>Welcome to Rixi!</Text>
       <TouchableHighlight style={button} onPress={() => props.fetchData()}>
-        <Text style={buttonText}>Load Data</Text>
+        <Text style={buttonText}>Lets get started!</Text>
       </TouchableHighlight>
-      <View style={mainContent}>
-        {
-          props.appData.isFetching && <Text>Loading</Text>
-        }
-        {
-          props.appData.data.length ? (
-            props.appData.data.map((person, i) => {
-              return <View key={i}>
-                <Text>Name: {person.name}</Text>
-                <Text>Age: {person.age}</Text>
-              </View>
-            })
-          ) : null
-        }
-      </View>
-    </View>
+    </Image>
   )
 }
 
 
-// styles = StyleSheet.create({
-//   container: {
-//     marginTop: 100
-//   },
-//   text: {
-//     textAlign: 'center'
-//   },
-//   button: {
-//     height: 60,
-//     margin: 10,
-//     justifyContent: 'center',
-//     alignItems: 'center',
-//     backgroundColor: '#0b7eff'
-//   },
-//   buttonText: {
-//     color: 'white'
-//   },
-//   mainContent: {
-//     margin: 10,
-//     alignItems: 'center',
-//   }
-// })
+styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    width: undefined,
+    height: undefined,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'transparent',
+    // flexDirection: 'column',
+  },
+  welcomeText: {
+    fontFamily: 'LobsterTwo-Bold',
+    fontSize: 40,
+  },
+  button: {
+    height: 60,
+    width: 150,
+    margin: 10,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#FFEFEE'
+  },
+  buttonText: {
+    fontFamily: 'LobsterTwo-Italic',
+    color: 'white',
+    fontSize: 24
+  },
+})
 
 function mapStateToProps (state) {
   return {
@@ -82,4 +71,4 @@ function mapDispatchToProps (dispatch) {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(App)
+)(SplashPage)
