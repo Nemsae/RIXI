@@ -9,14 +9,11 @@ import splashBackgroundImage from './images/rixi-introduction-background.jpg'
 
 let styles
 
-
-
 const App = (props) => {
   const {
     container,
     welcomeText,
     button,
-    backgroundImage,
     buttonText,
     mainContent,
   } = styles
@@ -42,23 +39,22 @@ styles = StyleSheet.create({
     backgroundColor: 'transparent',
     // flexDirection: 'column',
   },
-  // backgroundImage: {
-  //   flex: 1,
-  //   resizeMode: 'cover',
-  // },
   welcomeText: {
-    // fontFamily: 'notoserif',
-    fontSize: 20,
+    fontFamily: 'LobsterTwo-Bold',
+    fontSize: 40,
   },
   button: {
     height: 60,
+    width: 150,
     margin: 10,
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#FFEFEE'
   },
   buttonText: {
-    color: 'white'
+    fontFamily: 'LobsterTwo-Italic',
+    color: 'white',
+    fontSize: 24
   },
   mainContent: {
     margin: 10,
