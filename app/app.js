@@ -2,8 +2,8 @@ import React from 'react'
 import { TouchableHighlight, View, Text, StyleSheet } from 'react-native'
 
 import { connect } from 'react-redux'
-// import { fetchData } from './actions/thunkActions'
-import { fetchData } from './actions/sagaActions'
+import { fetchData } from './actions/dataActions'
+// import { fetchData } from './actions/sagaActions'
 
 let styles
 
