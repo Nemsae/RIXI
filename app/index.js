@@ -9,37 +9,46 @@ import splashBackgroundImage from './images/rixi-introduction-background.jpg'
 
 let styles
 
+
+
 const App = (props) => {
   const {
     container,
-    text,
+    welcomeText,
     button,
-    splashBackground,
+    backgroundImage,
     buttonText,
     mainContent,
   } = styles
 
   return (
-    <View style={container}>
-      <Text style={text}>Rixi Template</Text>
+    <Image source={splashBackgroundImage} style={container}>
+      <Text style={welcomeText}>Welcome to Rixi!</Text>
       <TouchableHighlight style={button} onPress={() => props.fetchData()}>
-        <Text style={buttonText}>Get Started!</Text>
+        <Text style={buttonText}>Lets get started!</Text>
       </TouchableHighlight>
-      <View style={mainContent}>
-        <Image source={splashBackgroundImage} style={splashBackground} />
-      </View>
-    </View>
+    </Image>
   )
 }
 
 
 styles = StyleSheet.create({
-  splashBackground: {
-    alignSelf: 'stretch',
-    textAlign: 'center',
+  container: {
+    flex: 1,
+    width: undefined,
+    height: undefined,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'transparent',
+    // flexDirection: 'column',
   },
-  text: {
-    textAlign: 'center'
+  // backgroundImage: {
+  //   flex: 1,
+  //   resizeMode: 'cover',
+  // },
+  welcomeText: {
+    // fontFamily: 'notoserif',
+    fontSize: 20,
   },
   button: {
     height: 60,
