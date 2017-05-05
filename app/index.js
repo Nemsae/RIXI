@@ -4,7 +4,7 @@ import { View } from 'react-native'
 import { connect } from 'react-redux'
 import SplashPage from './components/SplashPage'
 
-let styles
+import './routes'
 
 const App = () => {
   return (

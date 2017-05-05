@@ -18,7 +18,8 @@ class SplashPage extends Component {
       buttonText,
     } = styles
 
-    const goToHomePage = () => Actions.homePage({origin: "splashPage"})
+    // const goToHomePage = () => Actions.homePage({origin: "splashPage"})
+    const goToHomePage = () => Actions.homePage()
 
     return (
       <Image source={splashBackgroundImage} style={container}>
@@ -27,7 +28,9 @@ class SplashPage extends Component {
           activeOpacity={1}
           underlayColor='#E3C7C6'
           style={button}
-          onPress={goToHomePage}
+          onPress={() => Actions.homePage()}
+          // onPress={goToHomePage}
+          // onPress={Actions.homePage}
         >
           <Text style={buttonText}>Lets get started!</Text>
         </TouchableHighlight>

@@ -6,7 +6,7 @@ import { connect } from 'react-redux'
 
 import styles from './styles'
 
-const SplashPage = (props) => {
+const HomePage = (props) => {
   const {
     container,
     welcomeText,
@@ -24,6 +24,7 @@ const SplashPage = (props) => {
       <TouchableHighlight style={button} onPress={() => props.fetchData()}>
         <Text style={buttonText}>URL</Text>
       </TouchableHighlight>
+      <Text style={buttonText}>{this.props}</Text>
     </View>
   )
 }
@@ -43,4 +44,4 @@ function mapDispatchToProps (dispatch) {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(SplashPage)
+)(HomePage)
