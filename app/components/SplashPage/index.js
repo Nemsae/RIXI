@@ -19,7 +19,7 @@ const SplashPage = (props) => {
   return (
     <Image source={splashBackgroundImage} style={container}>
       <Text style={welcomeText}>Welcome to Rixi!</Text>
-      <TouchableHighlight style={button} onPress={() => props.fetchData()}>
+      <TouchableHighlight activeOpacity={1} underlayColor='#E3C7C6' style={button} onPress={() => props.fetchData()}>
         <Text style={buttonText}>Lets get started!</Text>
       </TouchableHighlight>
     </Image>
