@@ -6,7 +6,7 @@ import { connect } from 'react-redux'
 
 import styles from './styles'
 
-class HomePage extends React.Component {
+export default class HomePage extends React.Component {
   static navigationOptions = {
     title: 'Rixi Home'
   }
@@ -35,19 +35,19 @@ class HomePage extends React.Component {
   }
 }
 
-function mapStateToProps (state) {
-  return {
-    appData: state.appData,
-  }
-}
-
-function mapDispatchToProps (dispatch) {
-  return {
-    fetchData: () => dispatch(fetchData()),
-  }
-}
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(HomePage)
+// function mapStateToProps (state) {
+//   return {
+//     appData: state.appData,
+//   }
+// }
+//
+// function mapDispatchToProps (dispatch) {
+//   return {
+//     fetchData: () => dispatch(fetchData()),
+//   }
+// }
+//
+// export default connect(
+//   mapStateToProps,
+//   mapDispatchToProps
+// )(HomePage)
