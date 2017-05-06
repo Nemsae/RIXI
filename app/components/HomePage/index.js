@@ -6,27 +6,33 @@ import { connect } from 'react-redux'
 
 import styles from './styles'
 
-const HomePage = (props) => {
-  const {
-    container,
-    welcomeText,
-    button,
-    buttonText,
-  } = styles
+class HomePage extends React.Component {
+  static navigationOptions = {
+    title: 'Rixi Home'
+  }
 
-  return (
-    <View style={container}>
-      <Text style={welcomeText}>Choose Between</Text>
-      <TouchableHighlight style={button} onPress={() => props.fetchData()}>
-        <Text style={buttonText}>CAMERA</Text>
-      </TouchableHighlight>
-      <Text style={welcomeText}>OR</Text>
-      <TouchableHighlight style={button} onPress={() => props.fetchData()}>
-        <Text style={buttonText}>URL</Text>
-      </TouchableHighlight>
-      <Text style={buttonText}>{this.props}</Text>
-    </View>
-  )
+  render () {
+    const {
+      container,
+      welcomeText,
+      button,
+      buttonText,
+    } = styles
+
+    return (
+      <View style={container}>
+        <Text style={welcomeText}>Choose Between</Text>
+        <TouchableHighlight style={button} onPress={() => props.fetchData()}>
+          <Text style={buttonText}>CAMERA</Text>
+        </TouchableHighlight>
+        <Text style={welcomeText}>OR</Text>
+        <TouchableHighlight style={button} onPress={() => props.fetchData()}>
+          <Text style={buttonText}>URL</Text>
+        </TouchableHighlight>
+        <Text style={buttonText}>{this.props}</Text>
+      </View>
+    )
+  }
 }
 
 function mapStateToProps (state) {

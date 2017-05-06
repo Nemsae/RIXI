@@ -1,14 +1,17 @@
 import React, { Component } from 'react'
 import { TouchableHighlight, Text, Image } from 'react-native'
-
 import { connect } from 'react-redux'
+
+import { StackNavigator } from 'react-navigation';
+
 import { fetchData } from '../../actions/dataActions'
-
 import splashBackgroundImage from '../../images/rixi-introduction-background.jpg'
-
 import styles from './styles'
 
 class SplashPage extends Component {
+  static navigationOptions = {
+    title: 'Welcome to Rixi',
+  };
 
   render() {
     const {
@@ -18,6 +21,7 @@ class SplashPage extends Component {
       buttonText,
     } = styles
 
+    console.log('props in SplashPage: ', this.props);
     // const goToHomePage = () => Actions.homePage({origin: "splashPage"})
 
     return (
@@ -27,9 +31,8 @@ class SplashPage extends Component {
           activeOpacity={1}
           underlayColor='#E3C7C6'
           style={button}
-          // onPress={() => Actions.homePage()}
-          // onPress={goToHomePage}
-          // onPress={Actions.homePage}
+          onPress={() => this.props.navigation.navigate('Home')}
+          title="Rixi Home"
         >
           <Text style={buttonText}>Lets get started!</Text>
         </TouchableHighlight>
