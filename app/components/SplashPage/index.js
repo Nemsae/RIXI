@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { TouchableHighlight, Text, Image } from 'react-native'
-import { Actions } from 'react-native-router-flux'
 
 import { connect } from 'react-redux'
 import { fetchData } from '../../actions/dataActions'
@@ -10,6 +9,7 @@ import splashBackgroundImage from '../../images/rixi-introduction-background.jpg
 import styles from './styles'
 
 class SplashPage extends Component {
+
   render() {
     const {
       container,
@@ -19,7 +19,6 @@ class SplashPage extends Component {
     } = styles
 
     // const goToHomePage = () => Actions.homePage({origin: "splashPage"})
-    const goToHomePage = () => Actions.homePage()
 
     return (
       <Image source={splashBackgroundImage} style={container}>
@@ -28,7 +27,7 @@ class SplashPage extends Component {
           activeOpacity={1}
           underlayColor='#E3C7C6'
           style={button}
-          onPress={() => Actions.homePage()}
+          // onPress={() => Actions.homePage()}
           // onPress={goToHomePage}
           // onPress={Actions.homePage}
         >
