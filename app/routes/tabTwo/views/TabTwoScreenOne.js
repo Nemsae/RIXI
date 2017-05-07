@@ -1,7 +1,7 @@
 import React from 'react'
 import { View, Text } from 'react-native'
 
-export default class TabOneScreenOne extends React.Component {
+export default class TabTwoScreenOne extends React.Component {
   render() {
     let style = {
       flex: 1,
@@ -11,7 +11,7 @@ export default class TabOneScreenOne extends React.Component {
     }
     return(
       <View style={style}>
-        <Text>{ 'Tab One - Screen One' }</Text>
+        <Text>{ 'Tab Two - Screen One' }</Text>
       </View>
     )
   }
