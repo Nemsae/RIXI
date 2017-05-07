@@ -7,6 +7,11 @@ import { NavigatorTabOne } from '../navigationConfiguration'
 import Icon from 'react-native-vector-icons/FontAwesome'
 
 class TabOneNavigation extends React.Component {
+  static navigationOptions = {
+    tabBarLabel: 'Tab One',
+    tabBarIcon: ({ tintColor }) => <Icon size={ 20 } name={ 'cogs' } color={ tintColor } />
+  }
+
   render () {
     const { dispatch, navigationState } = this.props
     return (

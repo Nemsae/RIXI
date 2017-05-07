@@ -1,6 +1,8 @@
 import React from 'react'
 import { View, Text } from 'react-native'
 
+import SplashPage from '../../../components/SplashPage/'
+
 export default class TabOneScreenOne extends React.Component {
   render() {
     let style = {
@@ -10,9 +12,11 @@ export default class TabOneScreenOne extends React.Component {
       justifyContent: 'center',
     }
     return(
-      <View style={style}>
-        <Text>{ 'Tab One - Screen One' }</Text>
-      </View>
+      <SplashPage />
     )
   }
 }
+
+{/* <View style={style}>
+  <SplashPage />
+</View> */}
