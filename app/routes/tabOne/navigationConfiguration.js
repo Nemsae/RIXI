@@ -1,18 +1,20 @@
 import { StackNavigator } from 'react-navigation'
 
 //  Screens
-import TabOneScreenOne from './views/TabOneScreenOne'
+import SplashPage from '../../components/SplashPage/'
+// import TabOneScreenOne from './views/TabOneScreenOne'
 import TabOneScreenTwo from './views/TabOneScreenTwo'
 
 const routeConfiguration = {
-  TabOneScreenOne: { screen: TabOneScreenOne },
+  SplashPage: { screen: SplashPage },
+  // TabOneScreenOne: { screen: TabOneScreenOne },
   TabOneScreenTwo: { screen: TabOneScreenTwo },
 }
 
 //  disable header atm
 const stackNavigatorConfiguration = {
   headerMode: 'none',
-  initialRouteName: 'TabOneScreenOne'
+  initialRouteName: 'SplashPage'
 }
 
 export const NavigatorTabOne = StackNavigator(routeConfiguration, stackNavigatorConfiguration)
