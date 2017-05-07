@@ -2,5 +2,6 @@
 
 ## TODO:
 1. Routing: move getStateForAction function out of store and into navigationConfiguration
-1. Routing: make a jump to tab custom router action
-2. Add license and author
+2. Routing: make a jump to tab custom router action
+3. Take unused Screens out
+x. Add license and author
