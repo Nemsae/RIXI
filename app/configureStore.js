@@ -1,6 +1,6 @@
 import { applyMiddleware, combineReducers, createStore } from 'redux'
-import logger from 'redux-logger'
-
+// import logger from 'redux-logger'
+import promiseMiddleware from 'redux-promise-middleware'
 //  NAVIGATION
 import { NavigatorTabOne } from './routes/tabOne/navigationConfiguration'
 import { NavigatorTabTwo } from './routes/tabTwo/navigationConfiguration'
@@ -9,7 +9,7 @@ import { TabBar } from './routes/tabBar/navigationConfiguration'
 
 //  MIDDLEWARE
 const middleware = () => {
-  return applyMiddleware(logger())
+  return applyMiddleware(promiseMiddleware())
 }
 
 export default createStore(
