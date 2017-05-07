@@ -6,7 +6,7 @@ import { NavigatorTabOne } from '../navigationConfiguration'
 
 import Icon from 'react-native-vector-icons/FontAwesome'
 
-class TabBarNavigation extends React.Component {
+class TabOneNavigation extends React.Component {
   render () {
     const { dispatch, navigationState } = this.props
     return (
@@ -28,4 +28,4 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps)(TabBarNavigation)
+export default connect(mapStateToProps)(TabOneNavigation)
