@@ -22,9 +22,6 @@ class SplashPage extends Component {
       buttonText,
     } = styles
 
-    console.log('props in SplashPage: ', this.props);
-    // const goToHomePage = () => Actions.homePage({origin: "splashPage"})
-
     return (
       <Image source={splashBackgroundImage} style={container}>
         <Text style={welcomeText}>Welcome to Rixi!</Text>
