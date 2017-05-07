@@ -7,6 +7,11 @@ import { NavigatorTabTwo } from '../navigationConfiguration'
 import Icon from 'react-native-vector-icons/FontAwesome'
 
 class TabTwoNavigation extends React.Component {
+  static navigationOptions = {
+    tabBarLabel: 'Rixi Logs',
+    tabBarIcon: ({ tintColor }) => <Icon name="rocket" size={30} color="#900" />
+  }
+
   render () {
     const { dispatch, navigationState } = this.props
     return (

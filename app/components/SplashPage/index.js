@@ -3,6 +3,7 @@ import { TouchableHighlight, Text, Image } from 'react-native'
 import { connect } from 'react-redux'
 
 import { StackNavigator } from 'react-navigation';
+import Icon from 'react-native-vector-icons/FontAwesome'
 
 import { fetchData } from '../../actions/dataActions'
 import splashBackgroundImage from '../../images/rixi-introduction-background.jpg'
@@ -36,6 +37,9 @@ class SplashPage extends Component {
         >
           <Text style={buttonText}>Lets get started!</Text>
         </TouchableHighlight>
+        <Icon.Button name="facebook" backgroundColor="#3b5998">
+          Login with Facebook
+        </Icon.Button>
       </Image>
     )
   }
