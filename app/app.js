@@ -10,16 +10,15 @@ import configureStore from './configureStore';
 const store = configureStore()
 
 class WelcomeScreen extends React.Component {
-  // static navigationOptions = {
-  //   title: 'Welcome to Rixi',
-  // };
+  static navigationOptions = {
+    title: 'Welcome to Rixi',
+  };
 
   render() {
     // console.log('props in App.js: ', this.props);
     return (
       <Provider store={store}>
         <SplashPage navigation={this.props.navigation} />
-        {this.props.children}
       </Provider>
     )
   }
