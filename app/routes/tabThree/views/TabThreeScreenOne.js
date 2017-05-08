@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Text } from 'react-native'
+import { View, Text, TouchableOpacity } from 'react-native'
 
 export default class TabThreeScreenOne extends React.Component {
   render() {
@@ -11,7 +11,22 @@ export default class TabThreeScreenOne extends React.Component {
     }
     return(
       <View style={style}>
-        <Text>{ 'Tab Three - Screen One' }</Text>
+        <TouchableOpacity
+          onPress={
+            () => this.props.navigation.dispatch({
+              type: 'JUMP_TO_TAB',
+              payload: { index: 0 }
+            })
+          }
+          style={{
+            padding: 20,
+            borderRadius: 20,
+            backgroundColor: 'deeppink',
+            marginTop: 20,
+          }}
+        >
+          <Text>{ 'Go to Splash Page' }</Text>
+        </TouchableOpacity>
       </View>
     )
   }

@@ -5,7 +5,7 @@ import promiseMiddleware from 'redux-promise-middleware'
 import { NavigatorTabOne } from './routes/tabOne/navigationConfiguration'
 import { NavigatorTabTwo } from './routes/tabTwo/navigationConfiguration'
 import { NavigatorTabThree } from './routes/tabThree/navigationConfiguration'
-import { TabBar } from './routes/tabBar/navigationConfiguration'
+import { tabBarReducer } from './routes/tabBar/navigationConfiguration'
 
 //  MIDDLEWARE
 const middleware = () => {
@@ -14,7 +14,7 @@ const middleware = () => {
 
 export default createStore(
   combineReducers({
-    tabBar: (state, action) => TabBar.router.getStateForAction(action, state),
+    tabBar: tabBarReducer,
     tabOne: (state, action) => NavigatorTabOne.router.getStateForAction(action, state),
     tabTwo: (state, action) => NavigatorTabTwo.router.getStateForAction(action, state),
     tabThree: (state, action) => NavigatorTabThree.router.getStateForAction(action, state),
