@@ -1,8 +1,9 @@
-# RIXI: Receipt Logging and Management
+RIXI: Receipt Logging and Management
+======
 
 ## TODO:
-1.
-2. 
+1. Implement separate user story for logged in users/instead of showing the Splash Page.
+2.
 3. Take unused Screens out
 4. Make sense of reducer logic of navigationConfiguration for app structure
 x. Add license and author
