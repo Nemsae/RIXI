@@ -1,8 +1,15 @@
 import { combineReducers } from 'redux'
-import appData from './dataReducer'
+
+import { tabBarReducer } from './tabBarReducer'
+import { tabOneReducer } from './tabOneReducer'
+import { tabTwoReducer } from './tabTwoReducer'
+import { tabThreeReducer } from './tabThreeReducer'
 
 const rootReducer = combineReducers({
-  appData,
+  tabBar: tabBarReducer,
+  tabOne: tabOneReducer,
+  tabTwo: tabTwoReducer,
+  tabThree: tabThreeReducer,
 })
 
 export default rootReducer
