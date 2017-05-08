@@ -2,10 +2,11 @@ RIXI: Receipt Logging and Management
 ======
 
 ## TODO:
-1. Implement separate user story for logged in users/instead of showing the Splash Page.
-2.
-3. Take unused Screens out
-4. Make sense of reducer logic of navigationConfiguration for app structure
+1. Create a boilerplate with existing code for router+redux
+2. PropType validation for all screens
+3. Implement separate user story for logged in users/instead of showing the Splash Page.
+4. Take unused Screens out
+5. Make sense of reducer logic of navigationConfiguration for app structure
 x. Add license and author
 
 ### Done:
