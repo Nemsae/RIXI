@@ -13,10 +13,15 @@ const routeConfiguration = {
 const tabBarConfiguration = {
   //  Put other config options here
   tabBarOptions: {
-    activeTintColor: 'white',
-    inactiveTintColor: 'blue',
-    activeBackgroundColor: 'blue',
-    inactiveBackgroundColor: 'white',
+    headerTintColor: 'black',
+    // activeTintColor: 'white',
+    // inactiveTintColor: 'black',
+    // activeBackgroundColor: 'black',
+    // inactiveBackgroundColor: 'white',
+    // activeTintColor: '#EFF5E5',
+    // inactiveTintColor: '#D2E1D4',
+    // activeBackgroundColor: '#D2E1D4',
+    // inactiveBackgroundColor: '#EFF5E5',
   }
 }
 

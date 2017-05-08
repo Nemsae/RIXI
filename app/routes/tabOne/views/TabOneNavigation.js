@@ -8,8 +8,16 @@ import Icon from 'react-native-vector-icons/FontAwesome'
 
 class TabOneNavigation extends React.Component {
   static navigationOptions = {
-    title: 'Rixi Home',
-    tabBarIcon: ({ tintColor }) => <Icon size={ 20 } name={ 'cogs' } color={ 'black' } />
+    tabBarLabel: 'Rixi Home',
+    tabBarIcon: ({ tintColor }) => <Icon size={ 20 } name={ 'cogs' } color={ tintColor } />,
+    header: null,
+    headerTitleStyle: {
+
+    },
+    headerStyle: {
+
+    },
+    headerTintColor: 'black',
   }
 
   render () {
