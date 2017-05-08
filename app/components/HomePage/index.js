@@ -1,7 +1,7 @@
 import React from 'react'
-import { TouchableHighlight, Text, View } from 'react-native'
+import { TouchableHighlight, TouchableOpacity, Text, View } from 'react-native'
 
-import { connect } from 'react-redux'
+// import { connect } from 'react-redux'
 // import { fetchData } from '../../actions/dataActions'
 
 import styles from './styles'
@@ -29,7 +29,17 @@ export default class HomePage extends React.Component {
         <TouchableHighlight style={button} onPress={() => props.fetchData()}>
           <Text style={buttonText}>URL</Text>
         </TouchableHighlight>
-        <Text style={buttonText}>{this.props}</Text>
+        <TouchableOpacity
+          onPress={ () => this.props.navigation.goBack() }
+          style={{
+            padding:20,
+            borderRadius:20,
+            backgroundColor:'#E3C7C6',
+            marginTop:20
+          }}>
+          <Text>{'Go Back'}</Text>
+        </TouchableOpacity>
+        {/* <Text style={buttonText}>{this.props}</Text> */}
       </View>
     )
   }

@@ -29,7 +29,8 @@ class SplashPage extends Component {
           activeOpacity={1}
           underlayColor='#E3C7C6'
           style={button}
-          onPress={() => this.props.navigation.navigate('TabOneScreenTwo')}
+          onPress={() => this.props.navigation.navigate('HomePage')}
+          // onPress={() => this.props.navigation.navigate('TabOneScreenTwo')}
           title="Rixi Home"
         >
           <Text style={buttonText}>Lets get started!</Text>
