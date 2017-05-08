@@ -25,7 +25,7 @@ export default class HomePage extends React.Component {
         <TouchableHighlight style={button} onPress={() => props.fetchData()}>
           <Text style={buttonText}>CAMERA</Text>
         </TouchableHighlight>
-        <Text style={welcomeText}>OR</Text>
+        <Text style={welcomeText}>or</Text>
         <TouchableHighlight style={button} onPress={() => props.fetchData()}>
           <Text style={buttonText}>URL</Text>
         </TouchableHighlight>
