@@ -7,7 +7,7 @@ export default class TabOneScreenTwo extends React.Component {
   render() {
     let style = {
       flex: 1,
-      backgroundColor: 'orange',
+      backgroundColor: '#FFEFEE',
       alignItems: 'center',
       justifyContent: 'center',
     }
@@ -15,14 +15,14 @@ export default class TabOneScreenTwo extends React.Component {
       <View style={style}>
         <Text>{ 'Tab One - Screen Two' }</Text>
         <TouchableOpacity
-          onPress={ () => this.props.navigation.goBack() }
+          onPress={ () => this.props.navigation.navigate('SplashPage') }
           style={{
             padding:20,
             borderRadius:20,
-            backgroundColor:'purple',
+            backgroundColor:'#E3C7C6',
             marginTop:20
           }}>
-          <Text>{'Go back a screen'}</Text>
+          <Text>{'Go Back'}</Text>
         </TouchableOpacity>
       </View>
     )

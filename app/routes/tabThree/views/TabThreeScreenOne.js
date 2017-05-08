@@ -5,12 +5,25 @@ export default class TabThreeScreenOne extends React.Component {
   render() {
     let style = {
       flex: 1,
-      backgroundColor: 'red',
+      backgroundColor: '#FFEFEE',
       alignItems: 'center',
       justifyContent: 'center',
     }
     return(
       <View style={style}>
+        <TouchableOpacity
+          onPress={
+            () => this.props.navigation.navigate('TabThreeScreenTwo')
+          }
+          style={{
+            padding: 20,
+            borderRadius: 20,
+            backgroundColor: '#E3C7C6',
+            marginTop: 20,
+          }}
+        >
+          <Text>{ 'Go to Next Screen' }</Text>
+        </TouchableOpacity>
         <TouchableOpacity
           onPress={
             () => this.props.navigation.dispatch({
@@ -21,7 +34,7 @@ export default class TabThreeScreenOne extends React.Component {
           style={{
             padding: 20,
             borderRadius: 20,
-            backgroundColor: 'deeppink',
+            backgroundColor: '#E3C7C6',
             marginTop: 20,
           }}
         >

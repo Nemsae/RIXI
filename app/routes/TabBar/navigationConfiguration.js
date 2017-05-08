@@ -11,7 +11,6 @@ const routeConfiguration = {
 }
 
 const tabBarConfiguration = {
-  //  Put other config options here
   tabBarOptions: {
     activeTintColor: 'black',
     inactiveTintColor: '#8C9E8E',
@@ -42,11 +41,3 @@ const tabBarConfiguration = {
 }
 
 export const TabBar = TabNavigator(routeConfiguration, tabBarConfiguration)
-
-// export const tabBarReducer = (state, action) => {
-//   if (action.type === 'JUMP_TO_TAB') {
-//     return { ...state, ...action.payload }
-//   } else {
-//     return TabBar.router.getStateForAction(action, state)
-//   }
-// }
