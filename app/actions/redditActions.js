@@ -42,7 +42,8 @@ function receivePosts(subreddit, json) {
   return {
     type: RECEIVE_POSTS,
     subreddit,
-    posts: json.data.children.map(child => child.data),
+    posts: json,
+    // posts: json.data.children.map(child => child.data),
     receivedAt: Date.now()
   }
 }
@@ -52,12 +53,13 @@ function receivePosts(subreddit, json) {
 //  THUNK ACTION CREATOR
 export function fetchPosts(subreddit) {
   return function(dispatch) {
+    console.log('subreddit: ', subreddit);
     dispatch(requestPosts(subreddit))
     return fetch(`https://wwww.reddit.com/r/${subreddit}.json`)
-      .then(
-        response => response.json,
-        error => console.log('An error occured.', error)
-      )
+      .then(response => {
+        console.log('response: ', response);
+        return response.json
+      })
       .then(json =>
         dispatch(receivePosts(subreddit, json))
       )
@@ -67,3 +69,19 @@ export function fetchPosts(subreddit) {
       })
   }
 }
+// export function fetchPosts(subreddit) {
+//   return function(dispatch) {
+//     dispatch(requestPosts(subreddit))
+//     return fetch(`https://wwww.reddit.com/r/${subreddit}.json`)
+//       .then(response => response.json
+//         // error => console.log('An error occured.', error)
+//       )
+//       .then(json =>
+//         dispatch(receivePosts(subreddit, json))
+//       )
+//       .catch((error) => {
+//         console.log('fetchPosts error.', error.message)
+//         throw error;
+//       })
+//   }
+// }
