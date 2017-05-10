@@ -6,7 +6,7 @@ RIXI: Receipt Logging and Management
 2. PropType validation for all screens
 3. Start implementing OCR API through the URL use case
 4. Take unused Screens out
-5. Make sense of reducer logic of navigationConfiguration for app structure
+5. Add a backend (MongoDB or AWS)
 50. Implement separate user story for logged in users/instead of showing the Splash Page.
 100. Add license and author
 
