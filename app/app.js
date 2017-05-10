@@ -1,6 +1,8 @@
 import React from 'react';
 import { AppRegistry } from 'react-native';
 import { Provider } from 'react-redux'
+// import 'babel-polyfill'
+require('es6-promise').polyfill();
 
 import store from './configureStore'
 

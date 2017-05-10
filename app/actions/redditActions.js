@@ -1,3 +1,5 @@
+import fetch from 'fetch-everywhere'
+
 //  USER INTERACTIONS
 //  USER INTERACTIONS
 //  USER INTERACTIONS
@@ -36,6 +38,7 @@ function requestPosts(subreddit) {
 export const RECEIVE_POSTS = 'RECEIVE_POSTS'
 //  when network request comes in, dispatch this action
 function receivePosts(subreddit, json) {
+  // console.log('0000000000: ', json.data.children)
   return {
     type: RECEIVE_POSTS,
     subreddit,
@@ -47,3 +50,20 @@ function receivePosts(subreddit, json) {
 //  THUNK ACTION CREATOR
 //  THUNK ACTION CREATOR
 //  THUNK ACTION CREATOR
+export function fetchPosts(subreddit) {
+  return function(dispatch) {
+    dispatch(requestPosts(subreddit))
+    return fetch(`https://wwww.reddit.com/r/${subreddit}.json`)
+      .then(
+        response => response.json,
+        error => console.log('An error occured.', error)
+      )
+      .then(json =>
+        dispatch(receivePosts(subreddit, json))
+      )
+      .catch((error) => {
+        console.log('fetchPosts error.', error.message)
+        throw error;
+      })
+  }
+}
