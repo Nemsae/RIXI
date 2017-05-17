@@ -2,7 +2,7 @@ RIXI: Receipt Logging and Management
 ======
 
 ## TODO:
-1. 404 from reddit api
+1. 404 from reddit api, modify reducers and actions to take in OCR
 2. Create a boilerplate with existing code for router+redux
 3. PropType validation for all screens
 4. Start implementing OCR API through the URL use case

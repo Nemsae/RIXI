@@ -1,12 +1,13 @@
 import React from 'react'
 import { TouchableHighlight, TouchableOpacity, Text, View } from 'react-native'
 
-// import { connect } from 'react-redux'
-// import { fetchData } from '../../actions/dataActions'
+import { connect } from 'react-redux'
+import { fetchPosts } from '../../actions/redditActions'
 
 import styles from './styles'
 
-export default class HomePage extends React.Component {
+class HomePage extends React.Component {
+// export default class HomePage extends React.Component {
   static navigationOptions = {
     title: 'Rixi Home'
   }
@@ -18,15 +19,15 @@ export default class HomePage extends React.Component {
       button,
       buttonText,
     } = styles
-
+    console.log('000000000000000000000000000000000000000000: ', this.props.fetchPosts)
     return (
       <View style={container}>
         <Text style={welcomeText}>Choose Between</Text>
-        <TouchableHighlight style={button} onPress={() => props.fetchData()}>
+        <TouchableHighlight style={button} onPress={() => this.props.fetchPosts()}>
           <Text style={buttonText}>CAMERA</Text>
         </TouchableHighlight>
         <Text style={welcomeText}>or</Text>
-        <TouchableHighlight style={button} onPress={() => props.fetchData()}>
+        <TouchableHighlight style={button} onPress={() => this.props.fetchPosts()}>
           <Text style={buttonText}>URL</Text>
         </TouchableHighlight>
         <TouchableOpacity
@@ -36,7 +37,8 @@ export default class HomePage extends React.Component {
             borderRadius:20,
             backgroundColor:'#E3C7C6',
             marginTop:20
-          }}>
+          }}
+        >
           <Text>{'Go Back'}</Text>
         </TouchableOpacity>
         {/* <Text style={buttonText}>{this.props}</Text> */}
@@ -45,19 +47,19 @@ export default class HomePage extends React.Component {
   }
 }
 
-// function mapStateToProps (state) {
-//   return {
-//     appData: state.appData,
-//   }
-// }
+function mapStateToProps (state) {
+  return {
+    // appData: state.appData,
+  }
+}
+
+function mapDispatchToProps (dispatch) {
+  return {
+    fetchPosts: () => dispatch(fetchPosts()),
+  }
+}
 //
-// function mapDispatchToProps (dispatch) {
-//   return {
-//     fetchData: () => dispatch(fetchData()),
-//   }
-// }
-//
-// export default connect(
-//   mapStateToProps,
-//   mapDispatchToProps
-// )(HomePage)
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(HomePage)

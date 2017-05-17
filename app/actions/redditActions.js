@@ -1,5 +1,5 @@
 import fetch from 'fetch-everywhere'
-
+require('dotenv').config({ silent: true})
 //  USER INTERACTIONS
 //  USER INTERACTIONS
 //  USER INTERACTIONS
@@ -69,6 +69,14 @@ export function fetchPosts(subreddit) {
       })
   }
 }
+
+// const fetchPosts = reddit => dispatch => {
+//   dispatch(requestPosts(reddit))
+//   return fetch(`https://www.reddit.com/r/${reddit}.json`)
+//     .then(response => response.json())
+//     .then(json => dispatch(receivePosts(reddit, json)))
+// }
+
 // export function fetchPosts(subreddit) {
 //   return function(dispatch) {
 //     dispatch(requestPosts(subreddit))
