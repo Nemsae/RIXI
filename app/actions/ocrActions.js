@@ -1,9 +1,10 @@
 import fetch from 'fetch-everywhere'
-// require('../../.env').config({ silent: true})
+import Config from 'react-native-config'
+console.log('Config: ', Config);
 //  USER INTERACTIONS
 //  USER INTERACTIONS
 //  USER INTERACTIONS
-
+// console.log('Ocp_Apim_Subscription_Key: ', Ocp_Apim_Subscription_Key);
 // export const SELECT_SUBREDDIT = 'SELECT_SUBREDDIT'
 //
 // export function selectSubreddit(subreddit) {
@@ -73,7 +74,7 @@ export function fetchOcrText(imgURL) {
     	// 'detectOrientation': '',
       'Content-Type': 'application/json',
       'Host': 'westus.api.cognitive.microsoft.com',
-      'Ocp-Apim-Subscription-Key': '3d725f94f4274199a9e2095440054f75'
+      'Ocp-Apim-Subscription-Key': Config.Ocp_Apim_Subscription_Key,
       // 'Ocp-Apim-Subscription-Key': process.env.Ocp_Apim_Subscription_Key
     }),
     body: '{"url": "https://www.w3.org/TR/SVGTiny12/examples/textArea01.png"}'
