@@ -2,7 +2,8 @@ import React from 'react'
 import { TouchableHighlight, TouchableOpacity, Text, View } from 'react-native'
 
 import { connect } from 'react-redux'
-import { fetchPosts } from '../../actions/redditActions'
+// import { fetchPosts } from '../../actions/redditActions'
+import { fetchOcrText } from '../../actions/ocrActions'
 
 import styles from './styles'
 
@@ -19,15 +20,16 @@ class HomePage extends React.Component {
       button,
       buttonText,
     } = styles
-    console.log('000000000000000000000000000000000000000000: ', this.props.fetchPosts)
+    console.log('000000000000000000000000000000000000000000: ', this.props)
     return (
       <View style={container}>
         <Text style={welcomeText}>Choose Between</Text>
-        <TouchableHighlight style={button} onPress={() => this.props.fetchPosts()}>
+        <TouchableHighlight style={button}>
+        {/* <TouchableHighlight style={button} onPress={() => this.props.fetchPosts()}> */}
           <Text style={buttonText}>CAMERA</Text>
         </TouchableHighlight>
         <Text style={welcomeText}>or</Text>
-        <TouchableHighlight style={button} onPress={() => this.props.fetchPosts()}>
+        <TouchableHighlight style={button} onPress={() => this.props.fetchOcrText('https://www.w3.org/TR/SVGTiny12/examples/textArea01.png')}>
           <Text style={buttonText}>URL</Text>
         </TouchableHighlight>
         <TouchableOpacity
@@ -55,7 +57,7 @@ function mapStateToProps (state) {
 
 function mapDispatchToProps (dispatch) {
   return {
-    fetchPosts: () => dispatch(fetchPosts()),
+    fetchOcrText: (url) => dispatch(fetchOcrText(url)),
   }
 }
 //
