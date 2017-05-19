@@ -1,5 +1,5 @@
 import fetch from 'fetch-everywhere'
-require('dotenv').config({ silent: true})
+// require('../../.env').config({ silent: true})
 //  USER INTERACTIONS
 //  USER INTERACTIONS
 //  USER INTERACTIONS

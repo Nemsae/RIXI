@@ -7,6 +7,19 @@ import { NavigatorTabThree } from '../navigationConfiguration'
 import Icon from 'react-native-vector-icons/FontAwesome'
 
 class TabThreeNavigation extends React.Component {
+  static navigationOptions = {
+    tabBarLabel: 'Settings',
+    tabBarIcon: ({ tintColor }) => <Icon size={ 20 } name={ 'cogs' } color={ tintColor } />,
+    header: null,
+    headerTitleStyle: {
+
+    },
+    headerStyle: {
+
+    },
+    headerTintColor: 'black',
+  }
+
   render () {
     const { dispatch, navigationState } = this.props
     return (
