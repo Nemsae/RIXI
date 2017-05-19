@@ -50,7 +50,6 @@ import fetch from 'fetch-everywhere'
 
 
 export function fetchOcrText(imgURL) {
-  // console.log('url: ', url);
   let microsoftVisionURL = 'https://api.projectoxford.ai/vision/v1.0/ocr?language=en&detectOrientation=true'
   let request = new Request(microsoftVisionURL, imgURL, {
     headers: new Headers({
