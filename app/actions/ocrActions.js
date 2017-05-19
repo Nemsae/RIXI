@@ -47,16 +47,36 @@ import fetch from 'fetch-everywhere'
 //     receivedAt: Date.now()
 //   }
 // }
-
+// const RapidAPI = require('rapidapi-connect');
+// const rapid = new RapidAPI("undefined", *KEY*);
+//
+// rapid.call('MicrosoftComputerVision', 'ocr', {
+// 	'subscriptionKey': '3d725f94f4274199a9e2095440054f75',
+// 	'image': 'https://www.w3.org/TR/SVGTiny12/examples/textArea01.png',
+// 	'language': '',
+// 	'detectOrientation': ''
+//
+// }).on('success', (payload)=>{
+// 	 /*YOUR CODE GOES HERE*/
+// }).on('error', (payload)=>{
+// 	 /*YOUR CODE GOES HERE*/
+// });
 
 export function fetchOcrText(imgURL) {
-  let microsoftVisionURL = 'https://api.projectoxford.ai/vision/v1.0/ocr?language=en&detectOrientation=true'
-  let request = new Request(microsoftVisionURL, imgURL, {
+  // let microsoftVisionURL = 'wtf'
+  let request = new Request('https://westus.api.cognitive.microsoft.com/vision/v1.0/ocr?language=unk&detectOrientation =true', {
+    method: 'POST',
     headers: new Headers({
+      // 'subscriptionKey': '3d725f94f4274199a9e2095440054f75',
+    	// 'url': 'https://www.w3.org/TR/SVGTiny12/examples/textArea01.png',
+    	// 'language': '',
+    	// 'detectOrientation': '',
       'Content-Type': 'application/json',
+      'Host': 'westus.api.cognitive.microsoft.com',
       'Ocp-Apim-Subscription-Key': '3d725f94f4274199a9e2095440054f75'
       // 'Ocp-Apim-Subscription-Key': process.env.Ocp_Apim_Subscription_Key
-    })
+    }),
+    body: '{"url": "https://www.w3.org/TR/SVGTiny12/examples/textArea01.png"}'
   })
   return function(dispatch) {
     // dispatch()
@@ -71,6 +91,35 @@ export function fetchOcrText(imgURL) {
       })
   }
 }
+
+// exports.getDescription = function(imgUrl, cb) {
+//   let url = 'https://api.projectoxford.ai/vision/v1.0/ocr?language=en&detectOrientation=true';
+//   axios.post(url, imgUrl, {
+//     headers: {
+//       'Content-Type': 'application/json',
+//       'Ocp-Apim-Subscription-Key': process.env.Ocp_Apim_Subscription_Key
+//     }
+//   })
+//     .then((res) => {
+//       const { regions } = res.data
+//       const { lines } = regions[0]
+//       let newStr;
+//       let arr = []
+//         lines.forEach((line) => {
+//           let newArr  = line.words
+//           newArr.forEach((word) => {
+//             arr.push(word.text)
+//           })
+//         })
+//       let imageStr = arr.join(' ')
+//       cb(null, imageStr);
+//       exports.write(imageStr)
+//     })
+//     .catch((err) => {
+//       cb(err)
+//     })
+// }
+
 // export function fetchPosts(subreddit) {
 //   return function(dispatch) {
 //     console.log('subreddit: ', subreddit);
