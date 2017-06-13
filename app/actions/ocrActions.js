@@ -1,6 +1,7 @@
 import fetch from 'fetch-everywhere'
 import Config from 'react-native-config'
 console.log('Config: ', Config);
+
 //  USER INTERACTIONS
 //  USER INTERACTIONS
 //  USER INTERACTIONS
@@ -64,7 +65,7 @@ console.log('Config: ', Config);
 // });
 
 export function fetchOcrText(imgURL) {
-  // let microsoftVisionURL = 'wtf'
+  console.log('imgURL: ', imgURL);
   let request = new Request('https://westus.api.cognitive.microsoft.com/vision/v1.0/ocr?language=unk&detectOrientation =true', {
     method: 'POST',
     headers: new Headers({
@@ -74,10 +75,11 @@ export function fetchOcrText(imgURL) {
     	// 'detectOrientation': '',
       'Content-Type': 'application/json',
       'Host': 'westus.api.cognitive.microsoft.com',
-      'Ocp-Apim-Subscription-Key': Config.Ocp_Apim_Subscription_Key,
+      'Ocp-Apim-Subscription-Key': '3d725f94f4274199a9e2095440054f75',
+      // 'Ocp-Apim-Subscription-Key': Config.Ocp_Apim_Subscription_Key,
       // 'Ocp-Apim-Subscription-Key': process.env.Ocp_Apim_Subscription_Key
     }),
-    body: '{"url": "https://www.w3.org/TR/SVGTiny12/examples/textArea01.png"}'
+    body: `{"url": "${imgURL}"}`
   })
   return function(dispatch) {
     // dispatch()
