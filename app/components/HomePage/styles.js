@@ -13,7 +13,7 @@ const splashStyles = StyleSheet.create({
   modalContainer: {
     flex: 1,
     // width: undefined,
-    height: undefined,
+    // height: '50%',
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#EFF5E5',
