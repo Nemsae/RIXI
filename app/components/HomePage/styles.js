@@ -10,6 +10,15 @@ const splashStyles = StyleSheet.create({
     backgroundColor: '#EFF5E5',
     // flexDirection: 'column',
   },
+  modalContainer: {
+    flex: 1,
+    // width: undefined,
+    height: undefined,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#EFF5E5',
+    // flexDirection: 'column',
+  },
   welcomeText: {
     fontFamily: 'LobsterTwo-Bold',
     fontSize: 40,
