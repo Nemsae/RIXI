@@ -64,7 +64,7 @@ console.log('Config: ', Config);
 // 	 /*YOUR CODE GOES HERE*/
 // });
 
-export function fetchOcrText(imgURL) {
+export function fetchOCRText(imgURL) {
   console.log('imgURL: ', imgURL);
   let request = new Request('https://westus.api.cognitive.microsoft.com/vision/v1.0/ocr?language=unk&detectOrientation =true', {
     method: 'POST',
@@ -89,7 +89,7 @@ export function fetchOcrText(imgURL) {
         return response
       })
       .catch((error) => {
-        console.log('fetchOcrText error.', error.message)
+        console.log('fetchOCRText error.', error.message)
         throw error;
       })
   }
