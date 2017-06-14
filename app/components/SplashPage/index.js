@@ -31,7 +31,7 @@ class SplashPage extends Component {
           style={button}
           onPress={() => this.props.navigation.navigate('HomePage')}
           // onPress={() => this.props.navigation.navigate('TabOneScreenTwo')}
-          title="Rixi Home"
+          // title="Rixi Home"
         >
           <Text style={buttonText}>Lets get started!</Text>
         </TouchableHighlight>

@@ -1,11 +1,13 @@
 import { StackNavigator } from 'react-navigation'
 
 //  Screens
-import TabTwoScreenOne from '../../components/TabTwo/TabTwoScreenOne'
+// import TabTwoScreenOne from '../../components/TabTwo/TabTwoScreenOne'
 import TabTwoScreenTwo from '../../components/TabTwo/TabTwoScreenTwo'
+import OCRPage from '../../components/OCRPage/'
 
 const routeConfiguration = {
-  TabTwoScreenOne: { screen: TabTwoScreenOne },
+  OCRPage: { screen: OCRPage },
+  // TabTwoScreenOne: { screen: TabTwoScreenOne },
   TabTwoScreenTwo: { screen: TabTwoScreenTwo },
 }
 

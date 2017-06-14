@@ -29,6 +29,7 @@ class HomePage extends React.Component {
   submitURLforOCR = (url) => {
     this.props.fetchOCRText(url)
     this.setState({ isModalVisible: !this.state.isModalVisible })
+    this.props.navigation.navigate('OCRPage')
   }
 
   render () {
