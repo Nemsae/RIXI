@@ -1,5 +1,6 @@
 RIXI: Receipt Logging and Management
 ======
+COLOR Pallete: http://paletton.com/#uid=62R0t0k29Ke3Apy46st0ZH20DFO
 
 ## TODO:
 1. 404 from reddit api, modify reducers and actions to take in OCR
