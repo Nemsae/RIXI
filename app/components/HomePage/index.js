@@ -9,7 +9,8 @@ import { fetchOCRText } from '../../actions/ocrActions'
 /* STYLES */
 import styles from './styles'
 
-/** TODO: Take modal out into it's own view
+/** TODO: Take modal out into its own view
+    TODO: Take camera out into its own view
     TODO: Understand why nagivate(OCRPage) doesn't work. Take HACK out
     TODO: Fix textinput to clear default value when clicking on it to type
 */
@@ -27,9 +28,6 @@ class HomePage extends React.Component {
   setModalVisible = () => this.setState({ isModalVisible: !this.state.isModalVisible })
 
   submitURLforOCR = (url) => {
-    //  1. Send url to fetch OCR Text
-    //  2. Hide modal
-    //  3. navigate to OCRPage
     this.props.fetchOCRText(url)
     this.setState({ isModalVisible: !this.state.isModalVisible })
 
@@ -50,21 +48,24 @@ class HomePage extends React.Component {
       buttonText,
     } = styles
 
-    const tempURL = 'http://static4.businessinsider.com/image/52618eec69bedd5e4ea8f3ff/etsys-product-manager-was-out-on-a-date-when-his-wife-got-this-hilarious-accidental-text-from-the-babysitter.jpg'
+    // const tempURL = 'http://static4.businessinsider.com/image/52618eec69bedd5e4ea8f3ff/etsys-product-manager-was-out-on-a-date-when-his-wife-got-this-hilarious-accidental-text-from-the-babysitter.jpg'
     // const tempURL = 'https://i.stack.imgur.com/vrkIj.png'
     // const tempURL = 'https://www.w3.org/TR/SVGTiny12/examples/textArea01.png'
+    const tempURL = 'http://love.portalromantico.com/items/lovetext-299.jpg'
 
     return (
       <View style={container}>
         <Text style={welcomeText}>Choose Between</Text>
+        {/* <TouchableHighlight style={button} onPress={() =>
+
+        }> */}
         <TouchableHighlight style={button}>
           <Text style={buttonText}>CAMERA</Text>
         </TouchableHighlight>
         <Text style={welcomeText}>or</Text>
         <TouchableHighlight style={button} onPress={() =>
           this.setModalVisible(!this.state.modalVisibile)
-          }>
-          {/* <TouchableHighlight style={button} onPress={() => this.props.fetchOCRText('https://www.w3.org/TR/SVGTiny12/examples/textArea01.png')}> */}
+        }>
           <Text style={buttonText}>URL</Text>
         </TouchableHighlight>
 
@@ -81,7 +82,6 @@ class HomePage extends React.Component {
               }}
               onChangeText={(text) => this.setState({urlForFetchingOCR: text})}
               selectTextOnFocus={true}
-
               // placeholder='Hi'
               // placeholderTextColor='red'
               value={this.state.urlForFetchingOCR}
