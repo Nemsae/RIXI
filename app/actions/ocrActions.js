@@ -80,8 +80,6 @@ export function fetchOCRText(imgURL) {
   let request = new Request('https://westus.api.cognitive.microsoft.com/vision/v1.0/ocr?language=unk&detectOrientation =true', {
     method: 'POST',
     headers: new Headers({
-      // 'subscriptionKey': '3d725f94f4274199a9e2095440054f75',
-    	// 'url': 'https://www.w3.org/TR/SVGTiny12/examples/textArea01.png',
     	// 'language': '',
     	// 'detectOrientation': '',
       'Content-Type': 'application/json',
