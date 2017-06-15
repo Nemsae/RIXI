@@ -12,6 +12,18 @@ import { connect } from 'react-redux'
 import Camera from 'react-native-camera';
 
 class RixiCamera extends Component {
+  state = {
+    cameraChoice: 'back'
+  }
+
+  switchCameraView = () => {
+    if (this.state.cameraChoice === 'front') {
+      this.setState({ cameraChoice: 'back' })
+    } else {
+      this.setState({ cameraChoice: 'front' })
+    }
+  }
+
   render() {
     return (
       <View style={styles.container}>
@@ -20,8 +32,11 @@ class RixiCamera extends Component {
             this.camera = cam;
           }}
           style={styles.preview}
-          aspect={Camera.constants.Aspect.fill}>
+          type={this.state.cameraChoice}
+          aspect={Camera.constants.Aspect.fill}
+        >
           <Text style={styles.capture} onPress={this.takePicture.bind(this)}>[CAPTURE]</Text>
+          <Text style={styles.capture} onPress={this.switchCameraView.bind(this)}>[SWITCH]</Text>
         </Camera>
       </View>
     );

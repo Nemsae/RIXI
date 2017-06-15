@@ -3,7 +3,7 @@ RIXI: Receipt Logging and Management
 COLOR THEME: http://paletton.com/#uid=62R0t0k29Ke3Apy46st0ZH20DFO
 
 ## TODO:
-1. Create camera user story for OCR
+1. Create camera user story for OCR: allow user to save receipts to AWS
 1. ~~404 from reddit api, modify reducers and actions to take in OCR~~
 2. Create a boilerplate with existing code for router+redux
 3. PropType validation for all screens
