@@ -3,10 +3,11 @@ RIXI: Receipt Logging and Management
 COLOR THEME: http://paletton.com/#uid=62R0t0k29Ke3Apy46st0ZH20DFO
 
 ## TODO:
-1. 404 from reddit api, modify reducers and actions to take in OCR
+1. Create camera user story for OCR
+1. ~~404 from reddit api, modify reducers and actions to take in OCR~~
 2. Create a boilerplate with existing code for router+redux
 3. PropType validation for all screens
-4. Start implementing OCR API through the URL use case
+4. ~~Start implementing OCR API through the URL use case~~
 5. Take unused Screens out
 50. Add a backend (MongoDB or AWS)
 100. Implement separate user story for logged in users/instead of showing the Splash Page.
