@@ -13,6 +13,7 @@ COLOR THEME: http://paletton.com/#uid=62R0t0k29Ke3Apy46st0ZH20DFO
 100. Implement separate user story for logged in users/instead of showing the Splash Page.
 100. Add license and author
 
-### Done:
-1. ~~Routing: move getStateForAction function out of store and into navigationConfiguration~~
-2. ~~Routing: make a jump to tab custom router action~~
+### TODO #1
+1. captureTarget to specify captured image data output, change it to disk for optimized performanace
+2. Allow user to save receipts to AWS bucket
+3. Checkbox, 'Save to Camera Roll'. If true, saves to Camera Roll. Otherwise just send img data to OCR. 
