@@ -11,7 +11,7 @@ import { connect } from 'react-redux'
 
 import Camera from 'react-native-camera';
 
-class Camera extends Component {
+class RixiCamera extends Component {
   render() {
     return (
       <View style={styles.container}>
@@ -70,4 +70,4 @@ function mapDispatchToProps (dispatch) {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Camera)
+)(RixiCamera)

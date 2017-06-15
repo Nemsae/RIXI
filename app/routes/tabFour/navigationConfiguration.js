@@ -1,12 +1,12 @@
 import { StackNavigator } from 'react-navigation'
 
 //  Screens
-// import Camera from '../../components/Camera/'
+import RixiCamera from '../../components/RixiCamera/'
 import TabFourScreenOne from '../../components/TabFour/TabFourScreenOne'
 import TabFourScreenTwo from '../../components/TabFour/TabFourScreenTwo'
 
 const routeConfiguration = {
-  // Camera: { screen: Camera },
+  RixiCamera: { screen: RixiCamera },
   TabFourScreenOne: { screen: TabFourScreenOne },
   TabFourScreenTwo: { screen: TabFourScreenTwo },
 }
@@ -14,8 +14,8 @@ const routeConfiguration = {
 //  disable header atm
 const stackNavigatorConfiguration = {
   headerMode: 'none',
-  initialRouteName: 'TabFourScreenOne'
-  // initialRouteName: 'Camera'
+  // initialRouteName: 'TabFourScreenOne'
+  initialRouteName: 'RixiCamera'
 }
 
 export const NavigatorTabFour = StackNavigator(routeConfiguration, stackNavigatorConfiguration)
