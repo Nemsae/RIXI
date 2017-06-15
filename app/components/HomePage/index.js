@@ -50,6 +50,10 @@ class HomePage extends React.Component {
       buttonText,
     } = styles
 
+    const tempURL = 'http://static4.businessinsider.com/image/52618eec69bedd5e4ea8f3ff/etsys-product-manager-was-out-on-a-date-when-his-wife-got-this-hilarious-accidental-text-from-the-babysitter.jpg'
+    // const tempURL = 'https://i.stack.imgur.com/vrkIj.png'
+    // const tempURL = 'https://www.w3.org/TR/SVGTiny12/examples/textArea01.png'
+
     return (
       <View style={container}>
         <Text style={welcomeText}>Choose Between</Text>
@@ -85,12 +89,13 @@ class HomePage extends React.Component {
             <TouchableHighlight style= {button} onPress={() => {
               this.setModalVisible(!this.state.isModalVisible)
             }}>
-              <Text style={buttonText}>Go Back</Text>
+              <Text style={buttonText}>Cancel OCR</Text>
             </TouchableHighlight>
             <TouchableHighlight style= {button} onPress={() => {
-              this.submitURLforOCR(this.state.urlForFetchingOCR)
+              this.submitURLforOCR(tempURL)
+              // this.submitURLforOCR(this.state.urlForFetchingOCR)
             }}>
-              <Text style={buttonText}>Submit</Text>
+              <Text style={buttonText}>Get OCR</Text>
             </TouchableHighlight>
           </View>
         </Modal>

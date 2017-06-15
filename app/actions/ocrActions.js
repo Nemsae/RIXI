@@ -49,23 +49,34 @@ console.log('Config: ', Config);
 //     receivedAt: Date.now()
 //   }
 // }
-// const RapidAPI = require('rapidapi-connect');
-// const rapid = new RapidAPI("undefined", *KEY*);
-//
-// rapid.call('MicrosoftComputerVision', 'ocr', {
-// 	'subscriptionKey': '3d725f94f4274199a9e2095440054f75',
-// 	'image': 'https://www.w3.org/TR/SVGTiny12/examples/textArea01.png',
-// 	'language': '',
-// 	'detectOrientation': ''
-//
-// }).on('success', (payload)=>{
-// 	 /*YOUR CODE GOES HERE*/
-// }).on('error', (payload)=>{
-// 	 /*YOUR CODE GOES HERE*/
-// });
+
+// export const REQUEST_POSTS = 'REQUEST_POSTS'
+// //  fetching posts for a subreddit
+// function requestPosts(subreddit) {
+//   return {
+//     type: REQUEST_POSTS,
+//     subreddit
+//   }
+// }
+
+export const REQUEST_OCR = 'REQUEST_OCR'
+function requestPosts() {
+  return {
+    type: REQUEST_OCR,
+  }
+}
+
+export const RECEIVE_OCR = 'RECEIVE_OCR'
+function receiveOCR(json) {
+  console.log('json:receiveOCR ', json);
+  return {
+    type: RECEIVE_OCR,
+    payload: json,
+    receivedAt: Date.now()
+  }
+}
 
 export function fetchOCRText(imgURL) {
-  console.log('imgURL: ', imgURL);
   let request = new Request('https://westus.api.cognitive.microsoft.com/vision/v1.0/ocr?language=unk&detectOrientation =true', {
     method: 'POST',
     headers: new Headers({
@@ -77,16 +88,17 @@ export function fetchOCRText(imgURL) {
       'Host': 'westus.api.cognitive.microsoft.com',
       'Ocp-Apim-Subscription-Key': '3d725f94f4274199a9e2095440054f75',
       // 'Ocp-Apim-Subscription-Key': Config.Ocp_Apim_Subscription_Key,
-      // 'Ocp-Apim-Subscription-Key': process.env.Ocp_Apim_Subscription_Key
     }),
     body: `{"url": "${imgURL}"}`
   })
   return function(dispatch) {
-    // dispatch()
+    dispatch(requestPosts())
     return fetch(request)
       .then(response => {
-        console.log('response: ', response);
-        return response
+        return response.json()
+      })
+      .then(json => {
+        dispatch(receiveOCR(json))
       })
       .catch((error) => {
         console.log('fetchOCRText error.', error.message)
