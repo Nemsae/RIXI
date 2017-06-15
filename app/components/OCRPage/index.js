@@ -4,7 +4,8 @@ import {
   TouchableHighlight,
   // TouchableOpacity,
   Text,
-  View } from 'react-native'
+  View,
+  ActivityIndicator, } from 'react-native'
 import { connect } from 'react-redux'
 
 
@@ -32,9 +33,17 @@ class OCRPage extends React.Component {
       // buttonText,
     } = styles
 
+    console.log('this.props.ocrState: ', this.props.ocrState);
+    const { isFetching } = this.props.ocrState
     return (
       <View style={container}>
         <Text style={welcomeText}>OCRPage</Text>
+        {
+          isFetching ?
+            <ActivityIndicator size='large' color='#8C9E8E' />
+            :
+            <Text style={welcomeText}>Text</Text>
+        }
         {/* <TouchableHighlight
           activeOpacity={1}
           underlayColor='#E3C7C6'
@@ -50,7 +59,7 @@ class OCRPage extends React.Component {
 
 function mapStateToProps (state) {
   return {
-    // appData: state.appData,
+    ocrState: state.ocrState,
   }
 }
 
