@@ -27,22 +27,22 @@ class OCRPage extends React.Component {
     const {
       container,
       welcomeText,
-      button,
+      // button,
       // modalContainer,
-      buttonText,
+      // buttonText,
     } = styles
 
     return (
       <View style={container}>
         <Text style={welcomeText}>OCRPage</Text>
-        <TouchableHighlight
+        {/* <TouchableHighlight
           activeOpacity={1}
           underlayColor='#E3C7C6'
           style={button}
           onPress={() => this.props.navigation.goBack()}
         >
           <Text style={buttonText}>Go Back</Text>
-        </TouchableHighlight>
+        </TouchableHighlight> */}
       </View>
     )
   }

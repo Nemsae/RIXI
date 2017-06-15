@@ -30,8 +30,6 @@ class SplashPage extends Component {
           underlayColor='#E3C7C6'
           style={button}
           onPress={() => this.props.navigation.navigate('HomePage')}
-          // onPress={() => this.props.navigation.navigate('TabOneScreenTwo')}
-          // title="Rixi Home"
         >
           <Text style={buttonText}>Lets get started!</Text>
         </TouchableHighlight>

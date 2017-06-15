@@ -10,11 +10,11 @@ import { fetchOCRText } from '../../actions/ocrActions'
 import styles from './styles'
 
 /** TODO: Take modal out into it's own view
+    TODO: Understand why nagivate(OCRPage) doesn't work. Take HACK out
     TODO: Fix textinput to clear default value when clicking on it to type
 */
 
 class HomePage extends React.Component {
-  // export default class HomePage extends React.Component {
   static navigationOptions = {
     title: 'Rixi Home'
   }
@@ -27,9 +27,18 @@ class HomePage extends React.Component {
   setModalVisible = () => this.setState({ isModalVisible: !this.state.isModalVisible })
 
   submitURLforOCR = (url) => {
+    //  1. Send url to fetch OCR Text
+    //  2. Hide modal
+    //  3. navigate to OCRPage
     this.props.fetchOCRText(url)
     this.setState({ isModalVisible: !this.state.isModalVisible })
-    this.props.navigation.navigate('OCRPage')
+
+    //  HACK jump to tabe 2 instead of navigating directly to OCRPage
+    // this.props.navigation.navigate('OCRPage')
+    this.props.navigation.dispatch({
+      type: 'JUMP_TO_TAB',
+      payload: { index: 1 }
+    })
   }
 
   render () {
@@ -50,50 +59,50 @@ class HomePage extends React.Component {
         <Text style={welcomeText}>or</Text>
         <TouchableHighlight style={button} onPress={() =>
           this.setModalVisible(!this.state.modalVisibile)
-        }>
-        {/* <TouchableHighlight style={button} onPress={() => this.props.fetchOCRText('https://www.w3.org/TR/SVGTiny12/examples/textArea01.png')}> */}
-        <Text style={buttonText}>URL</Text>
-      </TouchableHighlight>
+          }>
+          {/* <TouchableHighlight style={button} onPress={() => this.props.fetchOCRText('https://www.w3.org/TR/SVGTiny12/examples/textArea01.png')}> */}
+          <Text style={buttonText}>URL</Text>
+        </TouchableHighlight>
 
-      <Modal isVisible={this.state.isModalVisible}>
-        <View style={modalContainer}>
-          <TextInput
-            style={{
-              // height: '50%',
-              width: '90%',
-              borderColor: 'white',
-              color: '#788889',
-              borderWidth: 5,
-              textAlign: 'center'
-            }}
-            onChangeText={(text) => this.setState({urlForFetchingOCR: text})}
-            selectTextOnFocus={true}
+        <Modal isVisible={this.state.isModalVisible}>
+          <View style={modalContainer}>
+            <TextInput
+              style={{
+                // height: '50%',
+                width: '90%',
+                borderColor: 'white',
+                color: '#788889',
+                borderWidth: 5,
+                textAlign: 'center'
+              }}
+              onChangeText={(text) => this.setState({urlForFetchingOCR: text})}
+              selectTextOnFocus={true}
 
-            // placeholder='Hi'
-            // placeholderTextColor='red'
-            value={this.state.urlForFetchingOCR}
-          />
-          <TouchableHighlight style= {button} onPress={() => {
-            this.setModalVisible(!this.state.isModalVisible)
-          }}>
-            <Text style={buttonText}>Go Back</Text>
-          </TouchableHighlight>
-          <TouchableHighlight style= {button} onPress={() => {
-            this.submitURLforOCR(this.state.urlForFetchingOCR)
-          }}>
-            <Text style={buttonText}>Submit</Text>
-          </TouchableHighlight>
-        </View>
-      </Modal>
+              // placeholder='Hi'
+              // placeholderTextColor='red'
+              value={this.state.urlForFetchingOCR}
+            />
+            <TouchableHighlight style= {button} onPress={() => {
+              this.setModalVisible(!this.state.isModalVisible)
+            }}>
+              <Text style={buttonText}>Go Back</Text>
+            </TouchableHighlight>
+            <TouchableHighlight style= {button} onPress={() => {
+              this.submitURLforOCR(this.state.urlForFetchingOCR)
+            }}>
+              <Text style={buttonText}>Submit</Text>
+            </TouchableHighlight>
+          </View>
+        </Modal>
 
-      <TouchableOpacity
-        onPress={ () => this.props.navigation.goBack() }
-        style={{
-          padding:20,
-          borderRadius:20,
-          backgroundColor:'#E3C7C6',
-          marginTop:20
-        }}
+        <TouchableOpacity
+          onPress={ () => this.props.navigation.goBack() }
+          style={{
+            padding:20,
+            borderRadius:20,
+            backgroundColor:'#E3C7C6',
+            marginTop:20
+          }}
         >
           <Text>{'Go Back'}</Text>
         </TouchableOpacity>

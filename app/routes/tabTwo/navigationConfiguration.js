@@ -14,7 +14,8 @@ const routeConfiguration = {
 //  disable header atm
 const stackNavigatorConfiguration = {
   headerMode: 'none',
-  initialRouteName: 'TabTwoScreenOne'
+  initialRouteName: 'OCRPage'
+  // initialRouteName: 'TabTwoScreenOne'
 }
 
 export const NavigatorTabTwo = StackNavigator(routeConfiguration, stackNavigatorConfiguration)
