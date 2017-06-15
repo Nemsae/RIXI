@@ -67,11 +67,11 @@ function requestPosts() {
 }
 
 export const RECEIVE_OCR = 'RECEIVE_OCR'
-function receiveOCR(json) {
-  console.log('json:receiveOCR ', json);
+function receiveOCR(text) {
+  console.log('text:receiveOCR ', text);
   return {
     type: RECEIVE_OCR,
-    payload: json,
+    payload: text,
     receivedAt: Date.now()
   }
 }
@@ -89,6 +89,7 @@ export function fetchOCRText(imgURL) {
     }),
     body: `{"url": "${imgURL}"}`
   })
+
   return function(dispatch) {
     dispatch(requestPosts())
     return fetch(request)
@@ -96,7 +97,17 @@ export function fetchOCRText(imgURL) {
         return response.json()
       })
       .then(json => {
-        dispatch(receiveOCR(json))
+        const { lines } = json.regions[0]
+        let wordsArr = []
+        lines.forEach((line) => {
+          let wordsOfLine = line.words
+
+          wordsOfLine.forEach((word) => {
+            wordsArr.push(word.text)
+          })
+        })
+        let text = wordsArr.join(' ')
+        dispatch(receiveOCR(text))
       })
       .catch((error) => {
         console.log('fetchOCRText error.', error.message)

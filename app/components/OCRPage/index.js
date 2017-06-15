@@ -28,21 +28,22 @@ class OCRPage extends React.Component {
     const {
       container,
       welcomeText,
+      blurbText,
       // button,
       // modalContainer,
       // buttonText,
     } = styles
 
     console.log('this.props.ocrState: ', this.props.ocrState);
-    const { isFetching } = this.props.ocrState
+    const { isFetching, ocrText } = this.props.ocrState
     return (
       <View style={container}>
-        <Text style={welcomeText}>OCRPage</Text>
+        <Text style={welcomeText}>OCR Page</Text>
         {
           isFetching ?
             <ActivityIndicator size='large' color='#8C9E8E' />
             :
-            <Text style={welcomeText}>Text</Text>
+            <Text style={blurbText}>{ocrText}</Text>
         }
         {/* <TouchableHighlight
           activeOpacity={1}
