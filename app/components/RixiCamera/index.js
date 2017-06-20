@@ -33,6 +33,8 @@ class RixiCamera extends Component {
           }}
           style={styles.preview}
           type={this.state.cameraChoice}
+          // flashMode={auto}
+          // torchMode={auto}
           aspect={Camera.constants.Aspect.fill}
         >
           <Text style={styles.capture} onPress={this.takePicture.bind(this)}>[CAPTURE]</Text>
