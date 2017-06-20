@@ -59,7 +59,12 @@ class HomePage extends React.Component {
         {/* <TouchableHighlight style={button} onPress={() =>
 
         }> */}
-        <TouchableHighlight style={button}>
+        <TouchableHighlight style={button} onPress={() =>
+          this.props.navigation.dispatch({
+            type: 'JUMP_TO_TAB',
+            payload: { index: 3 }
+          })
+        }>
           <Text style={buttonText}>CAMERA</Text>
         </TouchableHighlight>
         <Text style={welcomeText}>or</Text>
